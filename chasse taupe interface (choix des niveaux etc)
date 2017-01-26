@@ -1,0 +1,37 @@
+from tkinter import*
+
+fen=Tk()
+fen.title('Tape Taupe')
+
+#Les fonctions
+def monquitter():
+    fen.quit()
+    fen.destroy()
+
+#Pour le nom de la page
+fen.title('Tape Taupe')
+
+#Pour l'icone de la page
+fen.iconbitmap("C:/Users/lbedouet/Desktop/taupe.ico")
+
+#Pour l'écriture "choix des niveaux"
+tex1=Label(fen,text="Choix des niveaux")
+tex1.pack()
+
+#Pour la petite taupe kiki
+photo = PhotoImage(file="C:/Users/lbedouet/Desktop/taupekiki.gif")
+canvas = Canvas(fen,width=350, height=200)
+canvas.create_image(0, 0, anchor=NW, image=photo)
+canvas.pack()
+
+#Les differents boutons
+bouton2=Button(fen, text="Niveau Facile", bg="green")
+bouton2.pack()
+bouton3=Button(fen, text="Niveau Intermediaire", bg="light blue")
+bouton3.pack()
+bouton4=Button(fen, text="Niveau Expert", bg="red")
+bouton4.pack()
+bouton1=Button(fen, text="Quitter", command=monquitter, bg="black", fg="white")
+bouton1.pack()
+
+fen.mainloop
